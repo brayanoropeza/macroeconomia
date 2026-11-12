@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Viña Concha y Toro · Políticas macroeconómicas · 8 min</title>
+<meta name="description" content="Presentación ejecutiva de macroeconomía: impacto de las políticas económicas en Viña Concha y Toro. Tres expositores, 8 minutos, archivo offline.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230F2A4A'/%3E%3Cpath d='M32 14c6 6 9 12 9 18a9 9 0 0 1-18 0c0-6 3-12 9-18z' fill='%23C8A35A'/%3E%3C/svg%3E">
+<style>
+/* ============================================================
+   VIÑA CONCHA Y TORO · TAREA FINAL MACROECONOMÍA
+   Un solo archivo: sin CDN, sin fuentes externas, sin internet.
+   ============================================================ */
+:root{
+  --navy:#0F2A4A; --navy-2:#16385C; --navy-3:#0A1C2E; --ink:#12263A;
+  --gold:#C8A35A; --gold-2:#E8D5A8; --gold-3:#8E6F32;
+  --paper:#F8FAFC; --card:#FFFFFF; --muted:#5A6B7D; --light:#94A3B8;
+  --line:#E2E8F0; --line-2:#CBD5E1;
+  --pos:#0F7A5A; --pos-bg:#D8F3E8;
+  --neg:#B3261E; --neg-bg:#FBE0DE;
+  --neu:#8A5B00; --neu-bg:#FBEFD0;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --scale:1;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:var(--sans); color:var(--ink); background:#E7EDF4;
+  -webkit-font-smoothing:antialiased; overflow:hidden;
+}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.ic{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- BARRAS ---------- */
+#topbar{
+  position:fixed; top:0; left:0; right:0; height:62px; z-index:60;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:0 18px; background:var(--navy); color:#EAF0F7;
+  border-bottom:1px solid rgba(200,163,90,.35);
+}
+.brand{display:flex; align-items:center; gap:12px; min-width:0}
+.brand-mark{
+  width:34px;height:34px;border:1px solid rgba(200,163,90,.55);border-radius:9px;
+  display:grid;place-items:center; color:var(--gold); font-family:var(--mono);
+  font-size:12px; font-weight:700; letter-spacing:.5px; flex:none;
+}
+.brand-txt{display:flex; flex-direction:column; line-height:1.15; min-width:0}
+.brand-txt b{font-size:12.5px; letter-spacing:1.6px; text-transform:uppercase; font-weight:700; color:#fff; white-space:nowrap}
+.brand-txt span{font-size:10.5px; letter-spacing:.9px; color:#93A7BC; text-transform:uppercase; white-space:nowrap}
+
+.top-actions{display:flex; align-items:center; gap:8px}
+
+/* ---------- CRONÓMETRO ---------- */
+.timer{
+  display:flex; align-items:center; gap:9px; padding:5px 8px 5px 5px;
+  background:rgba(255,255,255,.06); border:1px solid rgba(200,163,90,.4);
+  border-radius:11px; min-width:246px;
+}
+.timer-main,.timer-reset{
+  width:30px;height:30px;border-radius:8px;display:grid;place-items:center;
+  background:var(--gold); color:#20180A; flex:none; transition:transform .12s,background .2s;
+}
+.timer-main:hover{transform:scale(1.05)}
+.timer-reset{background:rgba(255,255,255,.1); color:#C9D6E4}
+.timer-reset:hover{background:rgba(255,255,255,.18)}
+.timer-reset .ic{width:14px;height:14px}
+.timer-body{flex:1; min-width:0}
+.clock{
+  font-family:var(--mono); font-size:20px; font-weight:600; letter-spacing:.5px;
+  color:#fff; font-variant-numeric:tabular-nums; line-height:1;
+}
+.clock-sub{
+  display:flex; gap:5px; align-items:center; font-size:9.5px; letter-spacing:.4px;
+  color:#9DB0C4; margin-top:3px; white-space:nowrap;
+}
+.clock-sub .dot{opacity:.5}
+.tbar{height:2px; background:rgba(255,255,255,.14); border-radius:2px; margin-top:5px; overflow:hidden}
+.tbar i{display:block; height:100%; width:0%; background:var(--gold); transition:width .2s linear}
+.timer.warn{border-color:#E8B23A}
+.timer.warn .clock{color:#FBD98B}
+.timer.over{border-color:#E4675E; animation:pulse 1.6s infinite}
+.timer.over .clock{color:#FFC9C4}
+.timer.over .tbar i{background:#E4675E}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(228,103,94,.4)}50%{box-shadow:0 0 0 7px rgba(228,103,94,0)}}
+
+/* ---------- BOTONES DE ACCIÓN ---------- */
+.abtn{
+  display:inline-flex; align-items:center; gap:7px; height:34px; padding:0 12px;
+  border-radius:9px; font-size:11.5px; font-weight:600; letter-spacing:.3px;
+  color:#DCE6F1; border:1px solid rgba(255,255,255,.16); white-space:nowrap;
+  transition:background .18s, border-color .18s, color .18s;
+}
+.abtn:hover{background:rgba(255,255,255,.1); border-color:rgba(200,163,90,.5); color:#fff}
+.abtn--gold{background:var(--gold); color:#1E1608; border-color:var(--gold); font-weight:700}
+.abtn--gold:hover{background:#D9B876; color:#1E1608; border-color:#D9B876}
+.abtn .ic{width:15px;height:15px}
+.abtn--icon{padding:0; width:34px; justify-content:center}
+.abtn.is-on{background:rgba(200,163,90,.18); border-color:var(--gold); color:var(--gold-2)}
+
+/* ---------- ESCENARIO ---------- */
+#viewport{
+  position:fixed; top:62px; bottom:58px; left:0; right:0;
+  display:grid; place-items:center;
+}
+#stage{
+  position:relative; width:1280px; height:720px;
+  transform:scale(var(--scale)); transform-origin:center center;
+  border-radius:6px; overflow:hidden;
+  box-shadow:0 30px 60px -28px rgba(15,42,74,.45), 0 0 0 1px rgba(15,42,74,.08);
+  background:var(--paper);
+}
+.slide{
+  position:absolute; inset:0; display:none; flex-direction:column;
+  padding:38px 60px 30px; background:var(--paper); color:var(--ink);
+  overflow:hidden;
+}
+.slide.is-active{display:flex; animation:fade .32s ease}
+@keyframes fade{from{opacity:0; transform:translateY(6px)}to{opacity:1; transform:none}}
+
+/* cabecera de slide */
+.shead{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding-bottom:10px; border-bottom:1.5px solid var(--line);
+}
+.shead-l{display:flex; align-items:center; gap:10px; min-width:0}
+.shead .mark{
+  font-family:var(--mono); font-size:10px; letter-spacing:1.4px; color:var(--gold-3);
+  font-weight:700; text-transform:uppercase; white-space:nowrap;
+}
+.shead .tag{
+  font-size:9.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted);
+  font-weight:700; white-space:nowrap;
+}
+.shead .sep{width:1px; height:12px; background:var(--line-2)}
+.shead-r{display:flex; align-items:center; gap:8px}
+.owner{
+  display:inline-flex; align-items:center; gap:6px; padding:3px 9px 3px 4px;
+  border-radius:99px; background:#fff; border:1px solid var(--line);
+  font-size:10.5px; font-weight:700; color:var(--navy); white-space:nowrap;
+}
+.owner i{
+  width:17px;height:17px;border-radius:50%;display:grid;place-items:center;
+  font-style:normal; font-family:var(--mono); font-size:8.5px; font-weight:700; color:#fff;
+}
+.owner--b i{background:#0F2A4A}
+.owner--v i{background:#B8892F}
+.owner--c i{background:#2F6D5B}
+.tgt{
+  font-family:var(--mono); font-size:10px; letter-spacing:.6px; color:var(--muted);
+  border:1px dashed var(--line-2); border-radius:6px; padding:3px 7px; white-space:nowrap;
+}
+
+/* títulos */
+.tblock{padding:16px 0 12px}
+.kicker{
+  display:flex; align-items:center; gap:9px; margin-bottom:7px;
+  font-size:10px; letter-spacing:1.9px; text-transform:uppercase; font-weight:700; color:var(--gold-3);
+}
+.pnum{
+  display:grid; place-items:center; width:24px; height:24px; border-radius:6px;
+  border:1px solid var(--gold); color:var(--gold-3); font-family:var(--mono);
+  font-size:11px; font-weight:700; background:#fff;
+}
+h1{font-size:31px; line-height:1.14; letter-spacing:-.5px; font-weight:800; color:var(--navy); max-width:1000px}
+h1 .thin{font-weight:400; color:var(--muted)}
+.lead{margin-top:7px; font-size:13.5px; line-height:1.45; color:var(--muted); max-width:960px}
+.lead b{color:var(--navy); font-weight:700}
+
+.body{flex:1; min-height:0; display:flex; flex-direction:column; gap:11px}
+.cols{display:grid; grid-template-columns:1fr 1fr; gap:14px; flex:1; min-height:0}
+.cols--6-4{grid-template-columns:1.18fr .82fr}
+.cols--7-5{grid-template-columns:1.35fr .65fr}
+.col{display:flex; flex-direction:column; gap:10px; min-width:0}
+
+/* pie */
+.sfoot{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  margin-top:12px; padding-top:9px; border-top:1px solid var(--line);
+  font-size:9.5px; letter-spacing:1.1px; text-transform:uppercase; color:var(--light);
+}
+.sfoot b{color:var(--muted); font-weight:700}
+.sfoot .pg{font-family:var(--mono); letter-spacing:1px}
+
+/* ---------- COMPONENTES ---------- */
+.panel{
+  background:var(--card); border:1px solid var(--line); border-radius:10px;
+  padding:12px 14px; min-width:0;
+}
+.panel-h{
+  font-size:9.5px; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted);
+  font-weight:700; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center; gap:8px;
+}
+.panel-h em{font-style:normal; color:var(--gold-3); font-family:var(--mono); letter-spacing:0}
+
+.tiles{display:grid; gap:9px}
+.tiles--3{grid-template-columns:repeat(3,1fr)}
+.tiles--2{grid-template-columns:repeat(2,1fr)}
+.tile{background:var(--card); border:1px solid var(--line); border-radius:9px; padding:10px 12px}
+.tile b{
+  display:block; font-family:var(--mono); font-size:19px; color:var(--navy);
+  letter-spacing:-.4px; line-height:1.1;
+}
+.tile b small{font-size:11px; font-weight:600; color:var(--muted); letter-spacing:0}
+.tile span{display:block; font-size:9.5px; letter-spacing:.7px; text-transform:uppercase; color:var(--muted); margin-top:5px; line-height:1.3}
+.tile .up{color:var(--pos); font-weight:700}
+
+.bullets{list-style:none; display:flex; flex-direction:column; gap:8px}
+.bullets li{
+  position:relative; padding-left:17px; font-size:12.5px; line-height:1.42; color:var(--ink);
+}
+.bullets li::before{
+  content:""; position:absolute; left:0; top:6px; width:6px; height:6px;
+  border-radius:2px; background:var(--gold); transform:rotate(45deg);
+}
+.bullets b{color:var(--navy); font-weight:700}
+.bullets .num{
+  font-family:var(--mono); font-weight:700; color:var(--navy); background:#EEF3F9;
+  border-radius:4px; padding:0 4px;
+}
+
+.chain{display:flex; align-items:stretch; gap:6px}
+.step{
+  flex:1; background:var(--card); border:1px solid var(--line); border-top:3px solid var(--gold);
+  border-radius:8px; padding:9px 10px; min-width:0;
+}
+.step .k{font-size:8.5px; letter-spacing:1.2px; text-transform:uppercase; color:var(--light); font-weight:700; margin-bottom:4px}
+.step p{font-size:11.5px; line-height:1.38; color:var(--ink)}
+.step b{color:var(--navy)}
+.arrow{display:grid; place-items:center; color:var(--gold); flex:none; width:13px}
+.arrow .ic{width:12px;height:12px}
+
+.callout{
+  display:flex; align-items:center; gap:11px; background:#0F2A4A; color:#EAF0F7;
+  border-radius:10px; padding:11px 15px;
+}
+.callout .big{
+  font-family:var(--mono); font-size:20px; color:var(--gold-2); font-weight:700; white-space:nowrap;
+}
+.callout p{font-size:11.5px; line-height:1.4; color:#C6D6E6}
+.callout p b{color:#fff}
+.callout--warn{background:#4A1220; border:1px solid #7C2340}
+.callout--warn .big{color:#F3C7C2}
+
+.note-line{
+  display:flex; gap:8px; align-items:flex-start; font-size:10.5px; line-height:1.4;
+  color:var(--muted); background:#F1F5FA; border-left:3px solid var(--gold);
+  border-radius:0 6px 6px 0; padding:7px 10px;
+}
+.note-line b{color:var(--navy)}
+
+.chart{width:100%; height:auto; display:block; overflow:visible}
+.chart text{font-family:var(--sans); fill:var(--muted); font-size:8px}
+.chart .v{font-family:var(--mono); fill:var(--navy); font-size:9px; font-weight:700}
+.chart .grid{stroke:var(--line); stroke-width:.7; stroke-dasharray:2 3}
+
+.stat-hero{
+  display:flex; align-items:baseline; gap:10px; padding:2px 0 4px;
+}
+.stat-hero b{font-family:var(--mono); font-size:34px; letter-spacing:-1px; color:var(--navy); line-height:1}
+.stat-hero span{font-size:11px; color:var(--muted); line-height:1.3; max-width:130px}
+
+.mx{width:100%; border-collapse:collapse; font-size:10.5px}
+.mx th{
+  text-align:left; font-size:8.5px; letter-spacing:1.1px; text-transform:uppercase;
+  color:var(--muted); font-weight:700; padding:0 8px 6px; border-bottom:1.5px solid var(--line-2);
+}
+.mx td{padding:7px 8px; border-bottom:1px solid var(--line); vertical-align:middle; color:var(--ink); line-height:1.25}
+.mx tr:last-child td{border-bottom:0}
+.mx td:first-child{font-weight:700; color:var(--navy)}
+.mx .mit{color:var(--muted); font-size:9.5px}
+.pill{
+  display:inline-block; padding:2px 7px; border-radius:99px; font-size:8.5px;
+  font-weight:800; letter-spacing:.6px; text-transform:uppercase; white-space:nowrap;
+}
+.pill.pos{background:var(--pos-bg); color:var(--pos)}
+.pill.neg{background:var(--neg-bg); color:var(--neg)}
+.pill.neu{background:var(--neu-bg); color:var(--neu)}
+.mag{font-family:var(--mono); font-size:10px; letter-spacing:.5px; color:var(--navy); font-weight:700}
+
+.cards4{display:grid; grid-template-columns:1fr 1fr; gap:10px; flex:1}
+.card4{
+  position:relative; background:var(--card); border:1px solid var(--line);
+  border-radius:9px; padding:11px 13px 11px 40px;
+}
+.card4 .n{
+  position:absolute; left:11px; top:11px; width:20px; height:20px; border-radius:5px;
+  background:#EEF3F9; color:var(--navy); display:grid; place-items:center;
+  font-family:var(--mono); font-size:10px; font-weight:700;
+}
+.card4 h4{font-size:11.5px; color:var(--navy); margin-bottom:3px; letter-spacing:.2px}
+.card4 p{font-size:10.5px; line-height:1.38; color:var(--muted)}
+.card4 p b{color:var(--ink)}
+
+/* ---------- PORTADA ---------- */
+.slide--cover{
+  background:radial-gradient(120% 130% at 82% 12%, #1B4570 0%, #0F2A4A 46%, #08182A 100%);
+  color:#fff; padding:44px 62px 34px; justify-content:space-between;
+}
+.cover-art{position:absolute; inset:0; width:100%; height:100%; opacity:.5; pointer-events:none}
+.cover-year{
+  position:absolute; right:44px; bottom:14px; font-family:var(--mono); font-size:130px;
+  color:rgba(200,163,90,.09); letter-spacing:-6px; line-height:.8; user-select:none;
+}
+.cover-top{
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+  font-size:9.5px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-2);
+  border-bottom:1px solid rgba(200,163,90,.3); padding-bottom:11px; position:relative;
+}
+.cover-top .r{color:#8FA6BE; letter-spacing:1.2px}
+.cover-mid{position:relative; padding:16px 0 0; max-width:960px}
+.cover-rule{width:52px; height:3px; background:var(--gold); margin-bottom:16px}
+.slide--cover h1{
+  font-size:50px; line-height:1.06; letter-spacing:-1.5px; color:#fff; font-weight:800;
+}
+.slide--cover h1 em{
+  font-style:normal; color:var(--gold-2); display:inline;
+}
+.cover-sub{margin-top:14px; font-size:17px; color:#CFDCEA; font-weight:500; letter-spacing:.2px}
+.cover-sub b{color:#fff}
+.cover-chips{display:flex; gap:8px; margin-top:18px; flex-wrap:wrap}
+.chip{
+  display:inline-flex; align-items:center; gap:6px; padding:5px 11px; border-radius:99px;
+  border:1px solid rgba(200,163,90,.4); background:rgba(200,163,90,.08);
+  font-size:10px; letter-spacing:1.1px; text-transform:uppercase; color:var(--gold-2); font-weight:700;
+}
+.chip--plain{border-color:rgba(255,255,255,.16); background:rgba(255,255,255,.05); color:#C3D2E1}
+.cover-people{position:relative; display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:auto}
+.person{
+  display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:99px;
+  background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.1);
+}
+.person i{
+  width:30px;height:30px;border-radius:50%;display:grid;place-items:center; flex:none;
+  font-style:normal; font-family:var(--mono); font-size:10.5px; font-weight:700; color:#0F2A4A;
+}
+.person:nth-child(1) i{background:#DCE7F3}
+.person:nth-child(2) i{background:var(--gold-2)}
+.person:nth-child(3) i{background:#BFD9CF}
+.person b{display:block; font-size:11.5px; color:#fff; font-weight:700; line-height:1.2}
+.person span{display:block; font-size:9px; color:#93A7BC; letter-spacing:.8px; text-transform:uppercase; margin-top:2px}
+.cover-foot{
+  position:relative; display:flex; justify-content:space-between; align-items:center; gap:16px;
+  margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,.1);
+  font-size:9.5px; letter-spacing:1.2px; text-transform:uppercase; color:#8FA6BE;
+}
+.cover-foot .key{
+  font-family:var(--mono); color:var(--gold-2); letter-spacing:.5px; text-transform:none; font-size:10px;
+}
+
+/* ---------- AGENDA ---------- */
+.agenda{display:grid; grid-template-columns:repeat(3,1fr); gap:11px; flex:1; min-height:0}
+.agcol{
+  display:flex; flex-direction:column; background:var(--card); border:1px solid var(--line);
+  border-radius:10px; overflow:hidden; min-height:0;
+}
+.agcol-h{padding:10px 12px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; gap:8px}
+.agcol-h b{font-size:12px; color:var(--navy)}
+.agcol-h .tt{font-family:var(--mono); font-size:11px; color:var(--gold-3); font-weight:700}
+.agcol--b .agcol-h{border-top:3px solid #0F2A4A}
+.agcol--v .agcol-h{border-top:3px solid #B8892F}
+.agcol--c .agcol-h{border-top:3px solid #2F6D5B}
+.aglist{list-style:none; padding:9px 12px; display:flex; flex-direction:column; gap:7px; flex:1}
+.aglist li{display:flex; gap:8px; align-items:flex-start; font-size:11px; line-height:1.35; color:var(--ink)}
+.aglist .n{
+  font-family:var(--mono); font-size:9px; color:var(--muted); background:#F1F5FA;
+  border-radius:4px; padding:1px 4px; flex:none; margin-top:1px;
+}
+.aglist li.is-total{font-weight:700; color:var(--navy); border-top:1px dashed var(--line); padding-top:7px; margin-top:2px; font-size:10px; letter-spacing:.4px; text-transform:uppercase}
+
+.policy-row{display:grid; grid-template-columns:repeat(5,1fr); gap:8px}
+.pol{
+  background:var(--card); border:1px solid var(--line); border-radius:8px; padding:8px 9px;
+  display:flex; gap:7px; align-items:flex-start;
+}
+.pol .n{font-family:var(--mono); font-size:9px; font-weight:700; color:var(--gold-3); flex:none; margin-top:1px}
+.pol b{display:block; font-size:10px; line-height:1.25; color:var(--navy)}
+.pol span{display:block; font-size:8.5px; color:var(--light); margin-top:3px; line-height:1.25}
+
+/* ---------- MATRIZ / CONCLUSIONES ---------- */
+.balance{
+  display:flex; align-items:center; gap:12px; padding:10px 14px; border-radius:10px;
+  background:linear-gradient(90deg,#0F2A4A,#173A5F); color:#EAF0F7;
+}
+.balance b{font-size:12px; letter-spacing:.3px}
+.balance span{font-size:10.5px; color:#B9CBDE; line-height:1.35}
+.balance .tagp{
+  font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:1px;
+  color:#0F2A4A; background:var(--gold-2); border-radius:5px; padding:4px 9px; white-space:nowrap;
+}
+
+/* ---------- CIERRE ---------- */
+.slide--close{
+  background:radial-gradient(120% 130% at 18% 8%, #1B4570 0%, #0F2A4A 48%, #08182A 100%);
+  color:#fff; padding:44px 62px 30px; justify-content:space-between;
+}
+.quote{position:relative; max-width:930px; padding-top:4px}
+.quote .qm{font-family:Georgia,serif; font-size:72px; line-height:.6; color:var(--gold); opacity:.75; display:block; height:38px}
+.quote blockquote{
+  font-size:29px; line-height:1.25; letter-spacing:-.4px; color:#fff; font-weight:600;
+  border:0; margin:0;
+}
+.quote blockquote em{font-style:normal; color:var(--gold-2)}
+.quote .who{margin-top:14px; font-size:12px; color:#A9BDD1; line-height:1.5; max-width:720px}
+.srcs{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:3px 18px; padding:11px 14px;
+  background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.1); border-radius:9px;
+  position:relative;
+}
+.srcs .h{
+  grid-column:1/-1; font-size:9px; letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--gold-2); font-weight:700; margin-bottom:3px;
+}
+.srcs p{font-size:9px; line-height:1.4; color:#A9BDD1; padding-left:10px; position:relative}
+.srcs p::before{content:""; position:absolute; left:0; top:4px; width:4px; height:4px; border-radius:1px; background:rgba(200,163,90,.7)}
+.thanks{display:flex; align-items:center; justify-content:space-between; gap:16px; position:relative}
+.thanks b{font-size:15px; color:#fff; letter-spacing:.2px}
+.thanks span{display:block; font-size:10px; color:#8FA6BE; margin-top:3px; letter-spacing:.6px}
+.thanks .dl{
+  display:inline-flex; align-items:center; gap:7px; font-size:10.5px; font-weight:700;
+  color:var(--gold-2); border:1px solid rgba(200,163,90,.45); border-radius:8px; padding:7px 11px;
+  letter-spacing:.4px;
+}
+
+/* ---------- PIE DE NAVEGACIÓN ---------- */
+#bottombar{
+  position:fixed; left:0; right:0; bottom:0; height:58px; z-index:60;
+  display:flex; align-items:center; gap:14px; padding:0 16px;
+  background:var(--navy); color:#DCE6F1; border-top:1px solid rgba(200,163,90,.3);
+}
+.nav-btn{
+  display:inline-flex; align-items:center; gap:6px; height:34px; padding:0 11px;
+  border-radius:8px; border:1px solid rgba(255,255,255,.16); font-size:11px;
+  font-weight:600; color:#DCE6F1; transition:background .18s; flex:none;
+}
+.nav-btn:hover{background:rgba(255,255,255,.1)}
+.nav-btn:disabled{opacity:.35; cursor:default}
+.nav-btn:disabled:hover{background:none}
+.counter{font-family:var(--mono); font-size:11.5px; letter-spacing:1px; color:#fff; flex:none; min-width:64px; text-align:center}
+#dots{display:flex; align-items:center; gap:5px; flex:none}
+.dotbtn{
+  width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,.22);
+  transition:background .18s, transform .18s; padding:0;
+}
+.dotbtn:hover{background:rgba(255,255,255,.45)}
+.dotbtn.is-active{background:var(--gold); transform:scale(1.45)}
+#totalwrap{flex:1; display:flex; align-items:center; gap:9px; min-width:60px}
+.pbar{flex:1; height:3px; background:rgba(255,255,255,.14); border-radius:3px; overflow:hidden}
+.pbar i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--gold),var(--gold-2)); transition:width .25s linear}
+.pbar i.over{background:#E4675E}
+#hint{font-size:9.5px; letter-spacing:.9px; color:#8FA6BE; text-transform:uppercase; white-space:nowrap}
+#hint b{color:#C8D7E6; font-family:var(--mono); font-weight:600}
+
+/* ---------- NOTAS (PANEL INFERIOR FLOTANTE) ---------- */
+#notes{
+  position:fixed; left:0; right:0; bottom:58px; height:260px; z-index:80;
+  background:#FBFCFE; border-top:2px solid var(--gold);
+  transform:translateY(100%); transition:transform .25s ease;
+  display:flex; flex-direction:column;
+  box-shadow:0 -10px 25px rgba(15,42,74,.3);
+}
+body.notes-open #notes{transform:none}
+
+.notes-h{
+  padding:10px 16px; border-bottom:1px solid var(--line);
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+}
+.notes-h .l{font-size:9px; letter-spacing:1.6px; text-transform:uppercase; color:var(--gold-3); font-weight:700}
+.notes-h b{font-size:13px; color:var(--navy); margin-top:0; line-height:1.25}
+.notes-h .meta{font-family:var(--mono); font-size:9.5px; color:var(--muted); margin-top:0; letter-spacing:.4px}
+.notes-close{width:26px;height:26px;border-radius:6px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);flex:none}
+.notes-body{padding:12px 16px 16px; overflow:auto; font-size:12.5px; line-height:1.5; color:#2B3F55}
+.notes-body p{margin-bottom:8px}
+.notes-body strong{color:var(--navy); font-weight:700; background:#F3F6FA; padding:0 2px; border-radius:2px}
+.notes-foot{margin-top:auto; padding:6px 16px; border-top:1px solid var(--line); font-size:9px; letter-spacing:1px; text-transform:uppercase; color:var(--light)}
+
+/* ---------- TOAST ---------- */
+#toast{
+  position:fixed; left:50%; bottom:76px; transform:translate(-50%,16px); z-index:90;
+  background:#0B1B2B; color:#fff; border:1px solid rgba(200,163,90,.5);
+  border-radius:9px; padding:10px 15px; font-size:12px; font-weight:600;
+  display:flex; align-items:center; gap:8px; opacity:0; pointer-events:none;
+  transition:opacity .2s, transform .2s; max-width:calc(100vw - 32px);
+}
+#toast.show{opacity:1; transform:translate(-50%,0)}
+#toast .ic{color:var(--gold)}
+#toast.err{border-color:#E4675E}
+#toast.err .ic{color:#FF9A92}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:900px){
+  #topbar{padding:0 10px; gap:8px}
+  .brand-txt span{display:none}
+  .brand-txt b{font-size:10.5px; letter-spacing:1.1px}
+  .timer{min-width:0}
+  .abtn .lbl{display:none}
+  .abtn{padding:0 9px; width:34px; justify-content:center}
+  #bottombar{gap:8px; padding:0 9px}
+  .nav-btn .lbl{display:none}
+  .nav-btn{padding:0 9px}
+  #hint{display:none}
+}
+@media (max-width:560px){
+  #dots{display:none}
+  .counter{min-width:50px; font-size:10px}
+  .clock{font-size:17px}
+  .timer-body .clock-sub .lim{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important; transition-duration:.001ms !important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ ICONOS ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z" fill="currentColor" stroke="none"></path></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 4h3v16H8zM13 4h3v16h-3z" fill="currentColor" stroke="none"></path></symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 2.4 6.4"></path><path d="M4 5v5h5"></path></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v11"></path><path d="M7.5 10.5 12 15l4.5-4.5"></path><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path></symbol>
+  <symbol id="i-notes" viewBox="0 0 24 24"><path d="M5 4h14v16H5z"></path><path d="M8.5 8.5h7M8.5 12h7M8.5 15.5h4"></path></symbol>
+  <symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5M20 15v5h-5M15 4h5v5M9 20H4v-5"></path></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M14.5 5 8 12l6.5 7"></path></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M9.5 5 16 12l-6.5 7"></path></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"></path></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13"></path><path d="M13 7l5 5-5 5"></path></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5 9 17l10.5-10.5"></path></symbol>
+</svg>
+
+<!-- ============ BARRA SUPERIOR ============ -->
+<header id="topbar">
+  <div class="brand">
+    <div class="brand-mark">CT</div>
+    <div class="brand-txt">
+      <b>Concha y Toro · Macroeconomía</b>
+      <span>Tarea final · Negocios Internacionales</span>
+    </div>
+  </div>
+
+  <div class="top-actions">
+    <div class="timer" id="timer" title="Cronómetro: P inicia o pausa · R reinicia">
+      <button class="timer-main" id="playBtn" aria-label="Iniciar o pausar el cronómetro">
+        <svg class="ic" id="playIcon"><use href="#i-play"></use></svg>
+      </button>
+      <div class="timer-body">
+        <div class="clock" id="clock">0:00</div>
+        <div class="clock-sub">
+          <span id="slideClock">Slide 1/12 · 0:00</span>
+          <span class="dot">·</span>
+          <span class="lim">límite 8:00</span>
+        </div>
+        <div class="tbar"><i id="slideBar"></i></div>
+      </div>
+      <button class="timer-reset" id="resetBtn" aria-label="Reiniciar el cronómetro">
+        <svg class="ic"><use href="#i-reset"></use></svg>
+      </button>
+    </div>
+
+    <button class="abtn abtn--gold" id="dlBtn" title="Descargar un único archivo HTML que funciona sin internet">
+      <svg class="ic"><use href="#i-download"></use></svg><span class="lbl">Descargar</span>
+    </button>
+    <button class="abtn abtn--icon" id="notesBtn" aria-pressed="false" title="Guion del expositor (N)">
+      <svg class="ic"><use href="#i-notes"></use></svg>
+    </button>
+    <button class="abtn abtn--icon" id="fsBtn" title="Pantalla completa (F)">
+      <svg class="ic"><use href="#i-expand"></use></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============ ESCENARIO ============ -->
+<div id="viewport">
+<div id="stage">
+
+  <!-- 01 · PORTADA -->
+  <section class="slide slide--cover is-active" data-dur="15" data-owner="brayan" data-title="Portada">
+    <svg class="cover-art" viewBox="0 0 1280 720" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="vine" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#C8A35A" stop-opacity=".55"></stop>
+          <stop offset="1" stop-color="#C8A35A" stop-opacity="0"></stop>
+        </linearGradient>
+      </defs>
+      <path d="M980 -30 C 900 130, 1130 210, 1040 380 S 900 560, 1010 760" fill="none" stroke="url(#vine)" stroke-width="1.4"></path>
+      <path d="M1035 -30 C 955 140, 1190 225, 1095 395 S 960 575, 1070 760" fill="none" stroke="url(#vine)" stroke-width="1"></path>
+      <circle cx="1040" cy="380" r="2.6" fill="#C8A35A" opacity=".7"></circle>
+      <circle cx="1006" cy="205" r="2" fill="#C8A35A" opacity=".5"></circle>
+      <circle cx="1069" cy="520" r="2" fill="#C8A35A" opacity=".45"></circle>
+      <path d="M0 690 h1280" stroke="#C8A35A" stroke-opacity=".18" stroke-width="1"></path>
+    </svg>
+    <div class="cover-year">1883</div>
+
+    <div class="cover-top">
+      <span>Tarea final · Macroeconomía</span>
+      <span class="r">Negocios Internacionales · 2026</span>
+    </div>
+
+    <div class="cover-mid">
+      <div class="cover-rule"></div>
+      <h1>Impacto de las políticas económicas en la <em>empresa exportadora</em></h1>
+      <p class="cover-sub">Caso <b>Viña Concha y Toro</b> · Chile · principal exportador de vinos de Latinoamérica</p>
+      <div class="cover-chips">
+        <span class="chip">8:00 · 3 expositores</span>
+        <span class="chip chip--plain">5 políticas</span>
+        <span class="chip chip--plain">Chile vs México</span>
+        <span class="chip chip--plain">Análisis causa → efecto</span>
+        <span class="chip chip--plain">Cifras 2024–2026</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="cover-people">
+        <div class="person"><i>BO</i><div><b>Brayan J. Oropeza Acuña</b><span>Empresa · Monetaria · Tributaria</span></div></div>
+        <div class="person"><i>VH</i><div><b>Viktoria A. Hernández Sánchez</b><span>Gasto público · Comercio exterior</span></div></div>
+        <div class="person"><i>CP</i><div><b>Claudia B. Pérez Carrillo</b><span>Salarios · Conclusiones</span></div></div>
+      </div>
+      <div class="cover-foot">
+        <span>Pulsa <span class="key">→</span> para avanzar · el cronómetro arranca con el primer avance</span>
+        <span><span class="key">P</span> pausa · <span class="key">N</span> guion · <span class="key">F</span> pantalla completa</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 · AGENDA -->
+  <section class="slide" data-dur="20" data-owner="brayan" data-title="Ruta de la exposición">
+    <div class="shead">
+      <div class="shead-l"><span class="mark">CT · 1883</span><span class="sep"></span><span class="tag">Agenda y reparto</span></div>
+      <div class="shead-r"><span class="owner owner--b"><i>BO</i>Brayan</span><span class="tgt">0:25</span></div>
+    </div>
+
+    <div class="tblock">
+      <h1>Ruta de la exposición</h1>
+      <p class="lead">Doce bloques · <b>7:30 objetivo</b> sobre un límite de 8:00 · cada política con su canal de transmisión, una cifra concreta y una comparación con México.</p>
+    </div>
+
+    <div class="body">
+      <div class="agenda">
+        <div class="agcol agcol--b">
+          <div class="agcol-h"><b>Brayan Oropeza</b><span class="tt">2:50</span></div>
+          <ul class="aglist">
+            <li><span class="n">01</span> Portada y apertura</li>
+            <li><span class="n">02</span> Ruta y reparto</li>
+            <li><span class="n">03</span> Empresa + marco analítico</li>
+            <li><span class="n">04</span> Política monetaria</li>
+            <li><span class="n">05</span> Política tributaria</li>
+            <li class="is-total">Cierra: arancel ≠ impuesto al alcohol</li>
+          </ul>
+        </div>
+        <div class="agcol agcol--v">
+          <div class="agcol-h"><b>Viktoria Hernández</b><span class="tt">2:45</span></div>
+          <ul class="aglist">
+            <li><span class="n">06</span> Política de gasto público</li>
+            <li><span class="n">07</span> Política comercial exterior</li>
+            <li><span class="n">08</span> Análisis integrado</li>
+            <li><span class="n">09</span> Comparación Chile–México</li>
+            <li class="is-total">Cierra: ventaja prestada</li>
+          </ul>
+        </div>
+        <div class="agcol agcol--c">
+          <div class="agcol-h"><b>Claudia Pérez</b><span class="tt">1:55</span></div>
+          <ul class="aglist">
+            <li><span class="n">10</span> Política de precios y salarios</li>
+            <li><span class="n">11</span> Conclusiones</li>
+            <li><span class="n">12</span> Cierre y fuentes</li>
+            <li class="is-total">Cierra: balance condicionado</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-row">
+        <div class="pol"><span class="n">01</span><div><b>Monetaria</b><span>TPM · tipo de cambio</span></div></div>
+        <div class="pol"><span class="n">02</span><div><b>Tributaria</b><span>27% · IVA exportador</span></div></div>
+        <div class="pol"><span class="n">03</span><div><b>Gasto público</b><span>ProChile · CORFO</span></div></div>
+        <div class="pol"><span class="n">04</span><div><b>Comercio exterior</b><span>TLC · barreras</span></div></div>
+        <div class="pol"><span class="n">05</span><div><b>Precios y salarios</b><span>mínimo · insumos</span></div></div>
+      </div>
+    </div>
+
+    <div class="sfoot"><span><b>Macroeconomía</b> · Negocios Internacionales</span><span class="pg">02 / 12</span></div>
+  </section>
+
+  <!-- 03 · EMPRESA -->
+  <section class="slide" data-dur="40" data-owner="brayan" data-title="La empresa y el marco">
+    <div class="shead">
+      <div class="shead-l"><span class="mark">CT · 1883</span><span class="sep"></span><span class="tag">Empresa · marco analítico</span></div>
+      <div class="shead-r"><span class="owner owner--b"><i>BO</i>Brayan</span><span class="tgt">0:45</span></div>
+    </div>
+
+    <div class="tblock">
+      <h1>Viña Concha y Toro <span class="thin">· el caso</span></h1>
+      <p class="lead">Principal productor de vinos de Latinoamérica. Fundada en <b>1883</b> en Pirque. Cifras del ejercicio <b>2024</b>.</p>
+    </div>
+
+    <div class="body">
+      <div class="tiles tiles--3">
+        <div class="tile"><b>$958.600<small> M</small></b><span>Ingresos 2024 · <span class="up">+14,5%</span> en valor</span></div>
+        <div class="tile"><b>33,1<small> M cajas 9 L</small></b><span>Volumen vendido · +3,3%</span></div>
+        <div class="tile"><b>15,8<small> %</small></b><span>Margen EBITDA · $151.375 M</span></div>
+        <div class="tile"><b>+130<small> países</small></b><span>12 oficinas · 3 orígenes productivos</span></div>
+        <div class="tile"><b>37,0<small> %</small></b><span>De las exportaciones chilenas de vino (volumen)</span></div>
+        <div class="tile"><b>10,8<small> %</small></b><span>De las ventas se factura en Chile: $103.856 M</span></div>
+      </div>
+
+      <div class="chain">
+        <div class="step"><div class="k">Política económica</div><p>Banco Central, SII, gasto fiscal y acuerdos comerciales</p></div>
+        <div class="arrow"><svg class="ic"><use href="#i-arrow"></use></svg></div>
+        <div class="step"><div class="k">Canal de transmisión</div><p>Tipo de cambio · tasas · impuestos · logística · salarios</p></div>
+        <div class="arrow"><svg class="ic"><use href="#i-arrow"></use></svg></div>
+        <div class="step"><div class="k">Empresa exportadora</div><p>Ventas, costos, utilidad y competitividad internacional</p></div>
+      </div>
+
+      <div class="callout">
+        <span class="big">89,2%</span>
+        <p>De las ventas se factura <b>fuera de Chile</b>, principalmente en dólares, mientras los costos son en pesos. Ese <b>descalce de moneda</b> es el canal por donde entran las cinco políticas.</p>
+      </div>
+    </div>
+
+    <div class="sfoot"><span><b>Macroeconomía</b> · Negocios Internacionales</span><span class="pg">03 / 12</span></div>
+  </section>
+
+  <!-- 04 · MONETARIA -->
+  <section class="slide" data-dur="50" data-owner="brayan" data-title="Política monetaria">
+    <div class="shead">
+      <div class="shead-l"><span class="mark">CT · 1883</span><span class="sep"></span><span class="tag">Política 1 de 5</span></div>
+      <div class="shead-r"><span class="owner owner--b"><i>BO</i>Brayan</span><span class="tgt">0:55</span></div>
+    </div>
+
+    <div class="tblock">
+      <div class="kicker"><span class="pnum">01</span> Banco Central de Chile</div>
+      <h1>Política monetaria <span class="thin">· tasas y tipo de cambio</span></h1>
+      <p class="lead">Meta de inflación de <b>3%</b> y <b>tipo de cambio flexible</b>: el peso absorbe el shock externo y la empresa lo recibe en su margen.</p>
+    </div>
+
+    <div class="body">
+      <div class="cols cols--6-4">
+        <div class="col">
+          <div class="panel">
+            <div class="panel-h">Tasa de política monetaria <em>%</em></div>
+            <svg class="chart" viewBox="0 0 340 132" role="img" aria-label="TPM de 11,25% en junio 2023 a 4,50% en diciembre 2025">
+              <line class="grid" x1="16" y1="20" x2="330" y2="20"></line>
+              <line class="grid" x1="16" y1="56" x2="330" y2="56"></line>
+              <line class="grid" x1="16" y1="92" x2="330" y2="92"></line>
+              <polyline points="24,20 112,52 200,84 300,92" fill="none" stroke="#C8A35A" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"></polyline>
+              <polygon points="24,20 112,52 200,84 300,92 300,100 24,100" fill="#C8A35A" opacity=".1"></polygon>
+              <circle cx="24" cy="20" r="3.4" fill="#0F2A4A"></circle>
+              <circle cx="112" cy="52" r="3.4" fill="#0F2A4A"></circle>
+              <circle cx="200" cy="84" r="3.4" fill="#0F2A4A"></circle>
+              <circle cx="300" cy="92" r="4" fill="#C8A35A" stroke="#0F2A4A" stroke-width="1.4"></circle>
+              <text class="v" x="18" y="13">11,25%</text>
+              <text class="v" x="106" y="45">8,25%</text>
+              <text class="v" x="194" y="77">5,25%</text>
+              <text class="v" x="276" y="112">4,50%</text>
+              <text x="8" y="126">jun-23</text>
+              <text x="98" y="126">ene-24</text>
+              <text x="186" y="126">nov-24</text>
+              <text x="278" y="126">dic-25</text>
+            </svg>
+          </div>
+          <div class="tiles tiles--2">
+            <div class="tile"><b>4,1<small> %</small></b><span>IPC anual · sep-2026 (meta 3%)</span></div>
+            <div class="tile"><b>+2,5<small> %</small></b><span>PIB Chile 2025</span></div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="panel" style="flex:1">
+            <div class="panel-h">Cadena de transmisión</div>
+            <ul class="bullets">
+              <li><b>Tasa alta</b> → crédito de capital de trabajo más caro → menos financiamiento entre cosecha y venta.</li>
+              <li>El ciclo 11,25% → 4,50% libera <span class="num">$4.050 M</span> al año en una deuda de $60.000 M: <b>3,4% del resultado operacional</b>.</li>
+              <li><b>Peso que se aprecia</b> → cada dólar exportado rinde menos pesos.</li>
+            </ul>
+          </div>
+          <div class="note-line"><span><b>Ejercicio:</b> deuda de corto plazo constante de $60.000 M a TPM + 1,5 pp. Los $4.050 M son el ahorro de intereses, no un dato publicado.</span></div>
+        </div>
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="big">−71%</span>
+        <p>Una apreciación de <b>10%</b> del peso reduce los ingresos en <b>$85.474 M</b> y el resultado operacional cae de $119.718 M a <b>$34.244 M</b>: el margen pasa de <b>12,5% a 3,9%</b>. Es el riesgo N°1 de la empresa.</p>
+      </div>
+    </div>
+
+    <div class="sfoot"><span><b>Macroeconomía</b> · Negocios Internacionales</span><span class="pg">04 / 12</span></div>
+  </section>
+
+  <!-- 05 · TRIBUTARIA -->
+  <section class="slide" data-dur="45" data-owner="brayan" data-title="Política tributaria">
+    <div class="shead">
+      <div class="shead-l"><span class="mark">CT · 1883</span><span class="sep"></span><span class="tag">Política 2 de 5</span></div>
+      <div class="shead-r"><span class="owner owner--b"><i>BO</i>Brayan</span><span class="tgt">0:50</span></div>
+    </div>
+
+    <div class="tblock">
+      <div class="kicker"><span class="pnum">02</span> SII · fisco nacional y de destino</div>
+      <h1>Política tributaria <span class="thin">· impuestos y aranceles</span></h1>
+      <p class="lead">Grava la utilidad en Chile y el acceso al mercado en destino. Para un exportador, el IVA también es <b>flujo de caja a favor</b>.</p>
+    </div>
+
+    <div class="body">
+      <div class="cols">
+        <div class="col">
+          <div class="panel" style="flex:1">
+            <div class="panel-h">Instrumentos que la afectan</div>
+            <ul class="bullets">
+              <li><b>Primera Categoría 27%</b> sobre la utilidad: régimen general de grandes empresas.</li>
+              <li><b>IVA 19%</b>, pero la exportación va con <b>tasa 0%</b> y el crédito fiscal se recupera: el SII es fuente de caja.</li>
+              <li><b>Arancel 0%</b> en EE.UU., Unión Europea y China por los TLC vigentes.</li>
+              <li>Convenios de <b>doble tributación</b> y crédito tributario por <b>I+D vitivinícola</b>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="chain" style="flex-direction:column">
+            <div class="step"><div class="k">Utilidad</div><p>Resultado operacional 2024: <b>$119.718 M</b></p></div>
+            <div class="step"><div class="k">Impuesto 27%</div><p>Cada punto de tasa mueve <b>$1.200 M</b></p></div>
+            <div class="step"><div class="k">Margen neto</div><p>Utilidad neta 2024: <b>$77.420 M</b> (+79,5%)</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note-line"><span><b>Precisión que sube nota:</b> el vino chileno no paga arancel alto en China. Lo que enfrenta son <b>impuestos internos, registro sanitario y barreras no arancelarias</b>. Arancel ≠ impuesto específico al alcohol.</span></div>
+    </div>
+
+    <div class="sfoot"><span><b>Macroeconomía</b> · Negocios Internacionales</span><span class="pg">05 / 12</span></div>
+  </section>
+
+  <!-- 06 · GASTO PÚBLICO -->
+  <section class="slide" data-dur="45" data-owner="viktoria" data-title="Política de gasto público">
+    <div class="shead">
+      <div class="shead-l"><span class="mark">CT · 1883</span><span class="sep"></span><span class="tag">Política 3 de 5</span></div>
+      <div class="shead-r"><span class="owner owner--v"><i>VH</i>Viktoria</span><span class="tgt">0:50</span></div>
+    </div>
+
+    <div class="tblock">
+      <div class="kicker"><span class="pnum">03</span> Estado · gasto e inversión</div>
+      <h1>Política de gasto público <span class="thin">· el Estado como facilitador</span></h1>
+      <p class="lead">No es un subsidio directo a la empresa: es <b>cofinanciamiento de bienes públicos</b> que bajan el costo de acceso a mercado.</p>
+    </div>
+
+    <div class="body">
+      <div class="tiles tiles--2">
+        <div class="tile"><b style="font-size:15px">ProChile</b><span>Ferias ProWein y Vinexpo · misiones comerciales · red de oficinas en el exterior</span></div>
+        <div class="tile"><b style="font-size:15px">CORFO</b><span>Innovación, riego y fomento a la industria vitivinícola</span></div>
+        <div class="tile"><b style="font-size:15px">Infraestructura</b><span>Puertos, caminos, embalses: menos costo logístico por caja</span></div>
+        <div class="tile"><b style="font-size:15px">SAG y encadenamiento</b><span>Habilitación sanitaria de mercados · pequeños viñateros integrados a la cadena</span></div>
+      </div>
+
+      <div class="chain">
+        <div class="step"><div class="k">Gasto público</div><p>Ferias, riego, puertos y certificaciones</p></div>
+        <div class="arrow"><svg class="ic"><use href="#i-arrow"></use></svg></div>
+        <div class="step"><div class="k">Costo de acceso</div><p>Menos logística y menos barreras de entrada</p></div>
+        <div class="arrow"><svg class="ic"><use href="#i-arrow"></use></svg></div>
+        <div class="step"><div class="k">Más mercados</div><p>Mismo margen con más destinos atendibles</p></div>
+      </div>
+
+      <div class="callout">
+        <span class="big">CLP $3.145 M</span>
+        <p>Con <b>33,1 millones de cajas</b>, cada <b>US$0,10</b> de sobrecosto logístico por caja equivale a US$3,31 M al año. Un día menos de estadía portuaria mueve esa escala.</p>
+      </div>
+    </div>
+
+    <div class="sfoot"><span><b>Macroeconomía</b> · Negocios Internacionales</span><span class="pg">06 / 12</span></div>
+  </section>
+
+  <!-- 07 · COMERCIAL -->
+  <section class="slide" data-dur="50" data-owner="viktoria" data-title="Política comercial exterior">
+    <div class="shead">
+      <div class="shead-l"><span class="mark">CT · 1883</span><span class="sep"></span><span class="tag">Política 4 de 5</span></div>
+      <div class="shead-r"><span class="owner owner--v"><i>VH</i>Viktoria</span><span class="tgt">0:55</span></div>
+    </div>
+
+    <div class="tblock">
+      <div class="kicker"><span class="pnum">04</span> TLC · aranceles · barreras no arancelarias</div>
+      <h1>Política comercial exterior <span class="thin">· la ventaja estructural</span></h1>
+      <p class="lead">Chile tiene <b>36 acuerdos comerciales con 66 economías</b>, que cubren el <b>89% del PIB mundial</b>.</p>
+    </div>
+
+    <div class="body">
+      <div class="cols cols--7-5">
+        <div class="col">
+          <div class="tiles tiles--3">
+            <div class="tile"><b>36</b><span>Acuerdos comerciales</span></div>
+            <div class="tile"><b>66</b><span>Economías cubiertas</span></div>
+            <div class="tile"><b>89<small> %</small></b><span>Del PIB mundial</span></div>
+          </div>
+          <div class="panel" style="flex:1">
+            <div class="panel-h">Efecto sobre la empresa</div>
+            <ul class="bullets">
+              <li><b>Arancel 0%</b> o preferencial en EE.UU., UE y China: menor costo de entrada que competidores sin acuerdo.</li>
+              <li><b>Barreras no arancelarias</b>: etiquetado, límites de residuos, certificaciones y registro sanitario.</li>
+              <li>Riesgo de <b>reglas de origen</b> y de tensiones geopolíticas que reorientan los flujos comerciales.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="panel" style="flex:1; border-top:3px solid var(--gold)">
+            <div class="panel-h">Caso China <em>2021–2024</em></div>
+            <p style="font-size:11.5px; line-height:1.45; color:var(--ink)">
+              2021: China aplica aranceles antidumping de <b>hasta 218%</b> al vino australiano.
+              Concha y Toro gana participación <b>sin cambiar su producto</b>.
+            </p>
+            <p style="font-size:11.5px; line-height:1.45; color:var(--ink); margin-top:8px">
+              2024: China retira la medida → la ventaja se reduce. Es una
+              <b>ventaja prestada</b>, no propia.
+            </p>
+            <div style="margin-top:11px; display:flex; gap:6px; flex-wrap:wrap">
+              <span class="pill pos">Positivo</span>
+              <span class="pill neu">Magnitud alta</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sfoot"><span><b>Macroeconomía</b> · Negocios Internacionales</span><span class="pg">07 / 12</span></div>
+  </section>
+
+  <!-- 08 · ANÁLISIS INTEGRADO -->
+  <section class="slide" data-dur="30" data-owner="viktoria" data-title="Análisis integrado">
+    <div class="shead">
+      <div class="shead-l"><span class="mark">CT · 1883</span><span class="sep"></span><span class="tag">Análisis integrado</span></div>
+      <div class="shead-r"><span class="owner owner--v"><i>VH</i>Viktoria</span><span class="tgt">0:40</span></div>
+    </div>
+
+    <div class="tblock">
+      <h1>Las cinco políticas en una sola matriz</h1>
+      <p class="lead">Signo y magnitud del efecto sobre ventas, costos y competitividad. La mitigación es lo que la empresa realmente controla.</p>
+    </div>
+
+    <div class="body">
+      <table class="mx">
+        <thead>
+          <tr><th style="width:22%">Política</th><th style="width:30%">Canal principal</th><th style="width:13%">Signo</th><th style="width:12%">Magnitud</th><th>Mitigación</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monetaria / cambiaria</td>
+            <td>TPM y tipo de cambio USD/CLP</td>
+            <td><span class="pill neg">Negativo</span></td>
+            <td><span class="mag">Alta</span></td>
+            <td class="mit">Forwards y deuda en dólares</td>
+          </tr>
+          <tr>
+            <td>Tributaria</td>
+            <td>27% de utilidad · IVA exportador · arancel destino</td>
+            <td><span class="pill neu">Neutro</span></td>
+            <td><span class="mag">Media</span></td>
+            <td class="mit">Recuperación de IVA y convenios</td>
+          </tr>
+          <tr>
+            <td>Gasto público</td>
+            <td>ProChile, CORFO, puertos y SAG</td>
+            <td><span class="pill pos">Positivo</span></td>
+            <td><span class="mag">Media</span></td>
+            <td class="mit">Usar programas de bajo costo</td>
+          </tr>
+          <tr>
+            <td>Comercio exterior</td>
+            <td>Arancel 0% y barreras no arancelarias</td>
+            <td><span class="pill pos">Positivo</span></td>
+            <td><span class="mag">Alta</span></td>
+            <td class="mit">Diversificar mercados y certificarse</td>
+          </tr>
+          <tr>
+            <td>Precios y salarios</td>
+            <td>Sueldo mínimo e insumos importados</td>
+            <td><span class="pill neg">Negativo</span></td>
+            <td><span class="mag">Media</span></td>
+            <td class="mit">Productividad y premiumización</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="balance">
+        <span class="tagp">BALANCE NETO</span>
+        <b>Positivo, pero condicionado</b>
+        <span>Dos condiciones: gestión activa del tipo de cambio y diversificación de mercados. Sin eso, el signo se invierte.</span>
+      </div>
+    </div>
+
+    <div class="sfoot"><span><b>Macroeconomía</b> · Negocios Internacionales</span><span class="pg">08 / 12</span></div>
+  </section>
+
+  <!-- 09 · COMPARACIÓN CHILE–MÉXICO -->
+  <section class="slide" data-dur="40" data-owner="viktoria" data-title="Chile vs México">
+    <div class="shead">
+      <div class="shead-l"><span class="mark">CT · 1883</span><span class="sep"></span><span class="tag">Comparación internacional</span></div>
+      <div class="shead-r"><span class="owner owner--v"><i>VH</i>Viktoria</span><span class="tgt">0:40</span></div>
+    </div>
+
+    <div class="tblock">
+      <div class="kicker"><span class="pnum" style="font-size:8.5px">VS</span> Chile · México · la misma política, otro resultado</div>
+      <h1>Chile vs México <span class="thin">· qué cambia para la exportadora</span></h1>
+      <p class="lead">Dos economías abiertas y exportadoras, con políticas distintas en 2026. La comparación separa <b>lo que decide la política</b> de <b>lo que impone el mercado</b>.</p>
+    </div>
+
+    <div class="body">
+      <table class="mx">
+        <thead>
+          <tr><th style="width:18%">Variable</th><th style="width:22%">Chile</th><th style="width:22%">México</th><th>Efecto sobre la exportadora</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Tasa de política</td><td><b>4,50%</b> · Banco Central</td><td><b>6,25%</b> · Banxico (nov-2026)</td><td class="mit">Capital de trabajo ~175 pb más caro en México</td></tr>
+          <tr><td>Inflación anual</td><td><b>4,1%</b> · sep-2026</td><td><b>3,62%</b> · oct-2026</td><td class="mit">Más presión sobre costos en pesos en Chile</td></tr>
+          <tr><td>Crecimiento PIB</td><td><b>+2,5%</b> · 2025</td><td><b>+0,6%</b> · 2025</td><td class="mit">Menor demanda interna en México</td></tr>
+          <tr><td>Impuesto a la renta</td><td><b>27%</b> Primera Categoría</td><td><b>30%</b> ISR</td><td class="mit">3 pp de ventaja tributaria para Chile</td></tr>
+          <tr><td>Salario mínimo</td><td><b>$553.553</b> ≈ US$583</td><td><b>$315,04/día</b> ≈ US$514</td><td class="mit">México +13% en 2026 · Chile +2,7%</td></tr>
+          <tr><td>Acuerdos comerciales</td><td><b>36</b> acuerdos · 66 economías</td><td><b>14</b> TLC · 52 países</td><td class="mit">Ambos con acceso preferencial; Chile más amplio</td></tr>
+          <tr><td>Destino de exportaciones</td><td>Repartido: Reino Unido, EE.UU., Brasil, México</td><td><b>83% a EE.UU.</b></td><td class="mit">Riesgo de cliente único vs. costo logístico</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <span class="big">Lección</span>
+        <p>La política explica el <b>costo</b>; el mercado explica el <b>riesgo</b>. Chile paga flete largo pero vende diversificado; México tiene logística barata hacia EE.UU. y <b>83% de exposición a un solo país</b>.</p>
+      </div>
+    </div>
+
+    <div class="sfoot"><span><b>Macroeconomía</b> · Negocios Internacionales</span><span class="pg">09 / 12</span></div>
+  </section>
+
+  <!-- 10 · PRECIOS Y SALARIOS -->
+  <section class="slide" data-dur="55" data-owner="claudia" data-title="Política de precios y salarios">
+    <div class="shead">
+      <div class="shead-l"><span class="mark">CT · 1883</span><span class="sep"></span><span class="tag">Política 5 de 5</span></div>
+      <div class="shead-r"><span class="owner owner--c"><i>CP</i>Claudia</span><span class="tgt">0:55</span></div>
+    </div>
+
+    <div class="tblock">
+      <div class="kicker"><span class="pnum">05</span> Sueldo mínimo · insumos · regulación</div>
+      <h1>Política de precios y salarios <span class="thin">· el costo directo</span></h1>
+      <p class="lead">Empresa intensiva en mano de obra agrícola y de bodega: el salario mínimo y los insumos importados entran directo al costo unitario.</p>
+    </div>
+
+    <div class="body">
+      <div class="cols">
+        <div class="col">
+          <div class="tiles tiles--2">
+            <div class="tile"><b>$553.553</b><span>Ingreso mínimo desde may-2026 · <span class="up">+46%</span> desde 2022</span></div>
+            <div class="tile"><b>−5,6<small> %</small></b><span>Empleo en empresas intensivas en mínimo (BCCh, 2023–2025)</span></div>
+          </div>
+          <ul class="bullets" style="font-size:11.5px">
+            <li><b>Ley 40 horas</b> (44 → 40 h, gradual a 2028) y <b>cotización del empleador</b> de la reforma de pensiones.</li>
+            <li>Insumos importados: <b>vidrio, corcho, energía y fletes</b>, sensibles al tipo de cambio.</li>
+            <li><b>Etiquetado y advertencias sanitarias</b> (Ley 20.606) obligan a rediseñar envases.</li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <div class="panel" style="flex:1">
+            <div class="panel-h">Dos impactos cuantificados <em>CLP</em></div>
+            <ul class="bullets">
+              <li>Costo laboral = <b>18% del costo de ventas</b> y sube <b>8%</b> → costo +<span class="num">$8.420 M</span>, equivalente a <b>5,6% del EBITDA</b>.</li>
+              <li>Insumos importados = <b>25% del costo</b> y el peso se deprecia <b>10%</b> → costo +<span class="num">$14.619 M</span> (+2,5%).</li>
+            </ul>
+          </div>
+          <div class="note-line"><span><b>Base 2024:</b> costo de ventas estimado en 61% de las ventas ($584.746 M) y EBITDA de $151.375 M. Son ejercicios con supuesto escrito, no cifras publicadas.</span></div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <span class="big">Evidencia</span>
+        <p>El BCCh estima que, con el mínimo <b>+17,5% real</b> entre 2023 y 2025, el empleo cayó <b>5,6%</b> en las empresas con más trabajadores en el mínimo: la política no solo sube el costo, también cambia la cantidad de empleo.</p>
+      </div>
+    </div>
+
+    <div class="sfoot"><span><b>Macroeconomía</b> · Negocios Internacionales</span><span class="pg">10 / 12</span></div>
+  </section>
+
+  <!-- 11 · CONCLUSIONES -->
+  <section class="slide" data-dur="45" data-owner="claudia" data-title="Conclusiones">
+    <div class="shead">
+      <div class="shead-l"><span class="mark">CT · 1883</span><span class="sep"></span><span class="tag">Conclusiones · síntesis</span></div>
+      <div class="shead-r"><span class="owner owner--c"><i>CP</i>Claudia</span><span class="tgt">0:45</span></div>
+    </div>
+
+    <div class="tblock">
+      <h1>Cuatro hallazgos, un balance condicionado</h1>
+      <p class="lead">Lo que la evidencia del caso permite afirmar, en orden de importancia para la empresa.</p>
+    </div>
+
+    <div class="body">
+      <div class="cards4">
+        <div class="card4">
+          <div class="n">01</div>
+          <h4>El tipo de cambio es el riesgo principal</h4>
+          <p>Ingresa en dólares y costea en pesos. Una apreciación de 10% deja el margen operacional en <b>3,9%</b>. Requiere cobertura cambiaria.</p>
+        </div>
+        <div class="card4">
+          <div class="n">02</div>
+          <h4>La red de acuerdos es la ventaja estructural</h4>
+          <p><b>36 acuerdos y 66 economías</b> dan arancel preferencial frente a competidores sin acuerdo. Es la ventaja más difícil de copiar.</p>
+        </div>
+        <div class="card4">
+          <div class="n">03</div>
+          <h4>El Estado opera como facilitador</h4>
+          <p>ProChile, CORFO, infraestructura y SAG reducen el costo de acceso a mercado: <b>no son subsidio, son bienes públicos</b>.</p>
+        </div>
+        <div class="card4">
+          <div class="n">04</div>
+          <h4>Los costos internos presionan el margen</h4>
+          <p>Sueldo mínimo <b>+46% desde 2022</b> e insumos importados. La salida es productividad y premiumización, no traspaso automático a precio.</p>
+        </div>
+      </div>
+
+      <div class="balance">
+        <span class="tagp">BALANCE NETO</span>
+        <b>Positivo, condicionado</b>
+        <span>La política económica no es el contexto de la empresa: es una variable que se administra. Concha y Toro lo hace con cobertura, diversificación y portafolio premium.</span>
+      </div>
+    </div>
+
+    <div class="sfoot"><span><b>Macroeconomía</b> · Negocios Internacionales</span><span class="pg">11 / 12</span></div>
+  </section>
+
+  <!-- 12 · CIERRE -->
+  <section class="slide slide--close" data-dur="15" data-owner="claudia" data-title="Cierre y fuentes">
+    <div class="cover-top">
+      <span>Cierre · Concha y Toro</span>
+      <span class="r">Gracias por su atención</span>
+    </div>
+
+    <div class="quote">
+      <span class="qm">“</span>
+      <blockquote>Las políticas económicas no son externas a la empresa: son <em>el escenario donde compite</em>. La clave está en anticipar y adaptarse.</blockquote>
+      <p class="who">Tres expositores, cinco políticas, un caso real. Brayan Oropeza · Viktoria Hernández · Claudia Pérez — Macroeconomía, Negocios Internacionales, 2026.</p>
+    </div>
+
+    <div class="srcs">
+      <div class="h">Fuentes</div>
+      <p>Viña Concha y Toro · Press Release 4Q24 y Junta de Accionistas 2025</p>
+      <p>Viña Concha y Toro · Inside VCT 2025</p>
+      <p>Humphreys · Informe anual VCT 2025</p>
+      <p>Banco Central de Chile · TPM, RPM e IPoM 2025–2026</p>
+      <p>SUBREI · Acuerdos comerciales de Chile</p>
+      <p>Ministerio del Trabajo · Leyes 21.751 y 21.830</p>
+    </div>
+
+    <div class="thanks">
+      <div>
+        <b>¿Preguntas?</b>
+        <span>Archivo único: funciona sin internet</span>
+      </div>
+      <span class="dl">
+        <svg class="ic" style="width:13px;height:13px"><use href="#i-download"></use></svg>
+        Descargar presentación offline
+      </span>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<!-- ============ BARRA INFERIOR ============ -->
+<footer id="bottombar">
+  <button class="nav-btn" id="prevBtn">
+    <svg class="ic"><use href="#i-left"></use></svg><span class="lbl">Anterior</span>
+  </button>
+  <span class="counter" id="counter">01 / 12</span>
+  <div id="dots" role="tablist" aria-label="Ir a un slide"></div>
+  <div id="totalwrap">
+    <div class="pbar"><i id="totalBar"></i></div>
+    <span id="hint"><b>←</b> <b>→</b> navegar · <b>P</b> cronómetro</span>
+  </div>
+  <button class="nav-btn" id="nextBtn">
+    <span class="lbl">Siguiente</span><svg class="ic"><use href="#i-right"></use></svg>
+  </button>
+</footer>
+
+<!-- ============ NOTAS ============ -->
+<aside id="notes" aria-hidden="true">
+  <div class="notes-h">
+    <div>
+      <div class="l">Guion del expositor</div>
+      <b id="notesTitle">Portada</b>
+      <div class="meta" id="notesMeta">Brayan · 0:20</div>
+    </div>
+    <button class="notes-close" id="notesClose" aria-label="Cerrar guion">
+      <svg class="ic" style="width:13px;height:13px"><use href="#i-close"></use></svg>
+    </button>
+  </div>
+  <div class="notes-body" id="notesBody"></div>
+  <div class="notes-foot">7:40 objetivo · 8:00 límite · 3 expositores</div>
+</aside>
+
+<div id="toast" role="status"><svg class="ic"><use href="#i-check"></use></svg><span id="toastMsg"></span></div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* Snapshot limpio del propio archivo: sirve para el botón de descarga. */
+  var SNAPSHOT = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+
+  var NOTES = [
+    {
+      t: 'Portada', o: 'Brayan', d: 15,
+      s: 'Buenos días. Somos Brayan, Viktoria y Claudia. En los próximos <strong>ocho minutos</strong> vamos a mostrar cómo las políticas económicas del Estado afectan a una exportadora real: <strong>Viña Concha y Toro</strong>. Cinco políticas, un caso y una conclusión: la política económica no es el contexto, es una variable que se administra.'
+    },
+    {
+      t: 'Ruta de la exposición', o: 'Brayan', d: 20,
+      s: 'La ruta es simple: primero la empresa y el marco analítico; después las cinco políticas del programa, cada una con su <strong>canal de transmisión</strong> y una <strong>cifra concreta</strong>; cerramos con una matriz integrada y cuatro conclusiones. Yo abro y cubro monetaria y tributaria; Viktoria sigue con gasto público y comercio exterior; Claudia cierra con salarios y conclusiones.'
+    },
+    {
+      t: 'La empresa y el marco', o: 'Brayan', d: 40,
+      s: 'Concha y Toro nace en <strong>1883 en Pirque</strong>. En 2024 vendió <strong>$958.600 millones</strong>, con un EBITDA de $151.375 millones y presencia en más de <strong>130 países</strong>. Exporta el <strong>37% del volumen de vino chileno</strong>. El dato que ordena todo: solo el <strong>10,8%</strong> de sus ventas son en Chile; el <strong>89,2%</strong> se factura fuera, en dólares, mientras los costos son en pesos. Ese descalce es el canal por donde entran las cinco políticas: política, canal, y efecto en ventas, costos y margen.'
+    },
+    {
+      t: 'Política monetaria', o: 'Brayan', d: 50,
+      s: 'El Banco Central subió la TPM a <strong>11,25% en 2023</strong> y la bajó a <strong>4,5% a fines de 2025</strong>. La cosecha se financia con capital de trabajo antes de vender: con $60.000 millones de deuda corta, ese ciclo libera unos <strong>$4.050 millones al año</strong>. Pero el canal decisivo es el tipo de cambio. Una apreciación de <strong>10%</strong> del peso reduce los ingresos en <strong>$85.474 millones</strong> y deja el margen operacional en <strong>3,9%</strong>, desde 12,5%. Por eso es el riesgo número uno y por eso la empresa se cubre con forwards.'
+    },
+    {
+      t: 'Política tributaria', o: 'Brayan', d: 45,
+      s: 'Concha y Toro paga <strong>27% de Primera Categoría</strong>: cada punto de tasa mueve unos <strong>$1.200 millones</strong>. Pero para un exportador lo más relevante es el IVA: la exportación va con <strong>tasa cero</strong> y el crédito fiscal se recupera, así que el SII también es caja. En destino, gracias a los TLC, el <strong>arancel es cero</strong> en Estados Unidos, la Unión Europea y China; lo que sí cuesta son los impuestos internos y las certificaciones. Ojo: arancel no es lo mismo que impuesto al alcohol.'
+    },
+    {
+      t: 'Política de gasto público', o: 'Viktoria', d: 45,
+      s: 'Aquí el Estado es <strong>facilitador</strong>, no subsidiario. ProChile cofinancia ferias como ProWein y Vinexpo; CORFO financia innovación y riego; la inversión en puertos y embalses baja el costo logístico; el SAG habilita sanitariamente cada mercado nuevo. La escala importa: con <strong>33,1 millones de cajas</strong>, cada diez centavos de dólar de sobrecosto por caja son <strong>$3.145 millones al año</strong>. Y los programas para pequeñas viñas integran a los proveedores de uva a la cadena exportadora.'
+    },
+    {
+      t: 'Política comercial exterior', o: 'Viktoria', d: 50,
+      s: 'Chile tiene <strong>36 acuerdos comerciales con 66 economías</strong>, que cubren el <strong>89% del PIB mundial</strong>. Esa es la ventaja estructural de la empresa. El caso más claro es China: en <strong>2021</strong> aplicó aranceles antidumping de hasta <strong>218%</strong> al vino australiano y Concha y Toro ganó participación sin cambiar su producto. Cuando China retiró la medida en <strong>2024</strong>, esa ventaja se redujo: es una ventaja <strong>prestada</strong>. Y siempre están las barreras no arancelarias: etiquetado, residuos y registro sanitario.'
+    },
+    {
+      t: 'Análisis integrado', o: 'Viktoria', d: 30,
+      s: 'Integrando las cinco: <strong>monetaria y cambiaria</strong> son el riesgo, con efecto negativo y magnitud alta. La <strong>comercial</strong> es la ventaja estructural, positiva y alta. El <strong>gasto público</strong> es positivo y medio. La <strong>tributaria</strong> es neutra a negativa y la de <strong>salarios</strong> presiona costos con magnitud media. El balance es positivo, pero <strong>condicionado</strong> a dos cosas: gestión del tipo de cambio y diversificación de mercados.'
+    },
+    {
+      t: 'Chile vs México', o: 'Viktoria', d: 40,
+      s: 'Para cerrar el análisis comparamos con México, la otra gran economía exportadora de la región. Banxico tiene la tasa en <strong>6,25%</strong> y Chile en <strong>4,50%</strong>: el crédito de trabajo es más caro en México. La inflación está en 3,62% allá y 4,1% acá. En impuestos, México cobra <strong>30% de ISR</strong> y Chile <strong>27%</strong>: tres puntos de ventaja. La diferencia grande es comercial: México tiene 14 TLC con 52 países, pero el <strong>83% de sus exportaciones va a Estados Unidos</strong>; Chile tiene 36 acuerdos y un mercado más repartido. La política explica el costo; el mercado explica el riesgo.'
+    },
+    {
+      t: 'Política de precios y salarios', o: 'Claudia', d: 55,
+      s: 'El sueldo mínimo llegó a <strong>$553.553 en mayo de 2026</strong>: <strong>46% más que en 2022</strong>. La empresa es intensiva en mano de obra agrícola y de bodega. El Banco Central estimó que, entre 2023 y 2025, el empleo cayó <strong>5,6%</strong> en las empresas con más trabajadores en el mínimo. En la empresa: si la mano de obra es <strong>18% del costo</strong> y sube 8%, el costo sube <strong>$8.420 millones</strong>, un 5,6% del EBITDA. Y los insumos importados, vidrio, corcho y energía, suman otros <strong>$14.619 millones</strong> si el peso se deprecia 10%.'
+    },
+    {
+      t: 'Conclusiones', o: 'Claudia', d: 45,
+      s: 'Cuatro conclusiones. Primero, el <strong>tipo de cambio</strong> es el riesgo principal: se ingresa en dólares y se costea en pesos. Segundo, la <strong>red de acuerdos</strong> es la ventaja estructural. Tercero, el <strong>Estado facilita</strong> vía ProChile, CORFO e infraestructura. Cuarto, los <strong>costos internos</strong> presionan el margen. El balance es positivo, pero condicionado: cobertura cambiaria, premiumización y diversificación.'
+    },
+    {
+      t: 'Cierre y fuentes', o: 'Claudia', d: 15,
+      s: 'Cerramos con la idea central: las políticas económicas no son contexto, son el escenario donde la empresa compite. Concha y Toro lo demuestra: <strong>anticipar y adaptarse</strong> es la ventaja. Muchas gracias.'
+    }
+  ];
+
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var notesBody = document.getElementById('notesBody');
+  var notesTitle = document.getElementById('notesTitle');
+  var notesMeta = document.getElementById('notesMeta');
+  var notesPanel = document.getElementById('notes');
+  var clockEl = document.getElementById('clock');
+  var slideClockEl = document.getElementById('slideClock');
+  var slideBar = document.getElementById('slideBar');
+  var totalBar = document.getElementById('totalBar');
+  var timerEl = document.getElementById('timer');
+  var counterEl = document.getElementById('counter');
+  var dotsEl = document.getElementById('dots');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var playIcon = document.getElementById('playIcon');
+  var stage = document.getElementById('stage');
+
+  var LIMIT = 8 * 60 * 1000;
+  var i = 0;
+  var elapsed = 0;
+  var slideStart = 0;
+  var running = false;
+  var started = false;
+  var last = 0;
+  var toastTimer = null;
+
+  document.documentElement.style.setProperty('--scale', '1');
+
+  /* ---------- utilidades ---------- */
+  function fmt(ms) {
+    if (ms < 0) ms = 0;
+    var t = Math.floor(ms / 1000);
+    var m = Math.floor(t / 60);
+    var s = t % 60;
+    return m + ':' + (s < 10 ? '0' : '') + s;
+  }
+  function dur(slide) { return (parseInt(slide.getAttribute('data-dur'), 10) || 30) * 1000; }
+  function targetSum() {
+    return slides.reduce(function (a, s) { return a + dur(s); }, 0);
+  }
+
+  /* ---------- escalado 16:9 ---------- */
+  function updateScale() {
+    var vp = document.getElementById('viewport');
+    var pad = window.innerWidth < 700 ? 12 : 26;
+    var w = vp.clientWidth - pad * 2;
+    var h = vp.clientHeight - pad * 2;
+    var s = Math.min(w / 1280, h / 720);
+    if (!isFinite(s) || s <= 0) s = 0.5;
+    document.documentElement.style.setProperty('--scale', s.toFixed(4));
+  }
+
+  /* ---------- cronómetro ---------- */
+  function paint() {
+    var d = dur(slides[i]);
+    var slideElapsed = Math.max(0, elapsed - slideStart);
+
+    clockEl.textContent = fmt(elapsed);
+    slideClockEl.textContent = 'Slide ' + (i + 1) + '/' + slides.length + ' · ' + fmt(slideElapsed);
+
+    var pct = Math.min(100, slideElapsed / d * 100);
+    slideBar.style.width = pct.toFixed(1) + '%';
+
+    var total = Math.min(100, elapsed / LIMIT * 100);
+    totalBar.style.width = total.toFixed(1) + '%';
+    totalBar.classList.toggle('over', elapsed > LIMIT);
+
+    timerEl.classList.toggle('warn', elapsed <= LIMIT && (elapsed > LIMIT - 60000 || slideElapsed > d));
+    timerEl.classList.toggle('over', elapsed > LIMIT);
+  }
+
+  function loop() {
+    if (running) {
+      var now = performance.now();
+      elapsed += now - last;
+      last = now;
+    }
+    paint();
+  }
+
+  function start() {
+    if (running) return;
+    running = true;
+    started = true;
+    last = performance.now();
+    playIcon.innerHTML = '<use href="#i-pause"></use>';
+    paint();
+  }
+
+  function pause() {
+    running = false;
+    playIcon.innerHTML = '<use href="#i-play"></use>';
+  }
+
+  function toggleTimer() { running ? pause() : start(); }
+
+  function resetTimer() {
+    pause();
+    elapsed = 0;
+    slideStart = 0;
+    started = false;
+    paint();
+    toast('Cronómetro reiniciado');
+  }
+
+  /* ---------- navegación ---------- */
+  function go(n, autostart) {
+    n = Math.max(0, Math.min(slides.length - 1, n));
+    if (n !== i) {
+      slides[i].classList.remove('is-active');
+      i = n;
+      slides[i].classList.add('is-active');
+      slideStart = elapsed;
+      updateChrome();
+      paint();
+    }
+    if (autostart && !started) start();
+  }
+
+  function updateChrome() {
+    counterEl.textContent = ('0' + (i + 1)).slice(-2) + ' / ' + ('0' + slides.length).slice(-2);
+    prevBtn.disabled = i === 0;
+    nextBtn.disabled = i === slides.length - 1;
+    Array.prototype.forEach.call(dotsEl.children, function (b, k) {
+      b.classList.toggle('is-active', k === i);
+      b.setAttribute('aria-selected', k === i ? 'true' : 'false');
+    });
+    var n = NOTES[i] || { t: slides[i].getAttribute('data-title') || '', o: '', d: 0, s: '' };
+    notesTitle.textContent = n.t;
+    notesMeta.textContent = n.o + ' · ' + Math.floor(n.d / 60) + ':' + ('0' + (n.d % 60)).slice(-2);
+    notesBody.innerHTML = '<p>' + n.s + '</p>';
+  }
+
+  /* ---------- NOTAS (MODIFICADO SIN REESCALADO DE VIEWPORT) ---------- */
+  function toggleNotes(force) {
+    var open = typeof force === 'boolean' ? force : !document.body.classList.contains('notes-open');
+    document.body.classList.toggle('notes-open', open);
+    notesPanel.setAttribute('aria-hidden', open ? 'false' : 'true');
+    document.getElementById('notesBtn').classList.toggle('is-on', open);
+    document.getElementById('notesBtn').setAttribute('aria-pressed', open ? 'true' : 'false');
+  }
+
+  /* ---------- pantalla completa ---------- */
+  function toggleFullscreen() {
+    var d = document;
+    if (!d.fullscreenElement && !d.webkitFullscreenElement) {
+      var el = d.documentElement;
+      if (el.requestFullscreen) el.requestFullscreen();
+      else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+    } else {
+      if (d.exitFullscreen) d.exitFullscreen();
+      else if (d.webkitExitFullscreen) d.webkitExitFullscreen();
+    }
+  }
+
+  /* ---------- descarga offline ---------- */
+  function toast(msg, isErr) {
+    var el = document.getElementById('toast');
+    var icon = el.querySelector('use');
+    document.getElementById('toastMsg').textContent = msg;
+    el.classList.toggle('err', !!isErr);
+    if (icon) icon.setAttribute('href', isErr ? '#i-close' : '#i-check');
+    el.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { el.classList.remove('show'); }, 3600);
+  }
+
+  function download() {
+    try {
+      var blob = new Blob([SNAPSHOT], { type: 'text/html;charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'Concha-y-Toro-Macroeconomia-8min.html';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function () { URL.revokeObjectURL(url); if (a.parentNode) a.parentNode.removeChild(a); }, 5000);
+      toast('Descargado · funciona sin internet');
+    } catch (err) {
+      toast('No se pudo descargar: ' + err.message, true);
+    }
+  }
+
+  /* ---------- init ---------- */
+  slides.forEach(function (s, k) {
+    var b = document.createElement('button');
+    b.className = 'dotbtn';
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-label', 'Slide ' + (k + 1) + ': ' + (s.getAttribute('data-title') || ''));
+    b.addEventListener('click', function () { go(k, true); });
+    dotsEl.appendChild(b);
+  });
+
+  updateChrome();
+  updateScale();
+  paint();
+
+  document.getElementById('playBtn').addEventListener('click', toggleTimer);
+  document.getElementById('resetBtn').addEventListener('click', resetTimer);
+  document.getElementById('dlBtn').addEventListener('click', download);
+  document.getElementById('notesBtn').addEventListener('click', function () { toggleNotes(); });
+  document.getElementById('notesClose').addEventListener('click', function () { toggleNotes(false); });
+  document.getElementById('fsBtn').addEventListener('click', toggleFullscreen);
+  prevBtn.addEventListener('click', function () { go(i - 1, true); });
+  nextBtn.addEventListener('click', function () { go(i + 1, true); });
+
+  document.querySelector('.thanks .dl').addEventListener('click', download);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ') {
+      e.preventDefault(); go(i + 1, true);
+    } else if (k === 'ArrowLeft' || k === 'PageUp') {
+      e.preventDefault(); go(i - 1, true);
+    } else if (k === 'Home') {
+      e.preventDefault(); go(0, true);
+    } else if (k === 'End') {
+      e.preventDefault(); go(slides.length - 1, true);
+    } else if (k === 'p' || k === 'P') {
+      toggleTimer();
+    } else if (k === 'r' || k === 'R') {
+      resetTimer();
+    } else if (k === 'n' || k === 'N') {
+      toggleNotes();
+    } else if (k === 'f' || k === 'F') {
+      toggleFullscreen();
+    } else if (k === 'Escape') {
+      toggleNotes(false);
+    }
+  });
+
+  window.addEventListener('resize', updateScale);
+  window.addEventListener('orientationchange', function () { setTimeout(updateScale, 120); });
+  document.addEventListener('fullscreenchange', function () { setTimeout(updateScale, 120); });
+
+  setInterval(loop, 200);
+
+  /* El cronómetro empieza al primer avance; también con el botón play. */
+  window.__deck = { go: go, total: targetSum() };
+})();
+</script></body></html>
